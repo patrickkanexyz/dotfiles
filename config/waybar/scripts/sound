@@ -1,0 +1,16 @@
+#!/usr/local/bin/bash
+#vol up, vol down, mute toggle
+
+case "${1}" in
+	up) mixer vol.volume=+5% > /dev/null ;;
+	down) mixer vol.volume=-5% > /dev/null ;;
+	mute) mixer vol.mute=toggle > /dev/null ;;
+	*) ;;
+esac
+
+VOL=$(mixer -o vol.volume | awk -F : '{print $2}')
+
+# This sends a signal to waybar telling it to update the widget text
+pkill -RTMIN+4 waybar
+
+printf "{\"text\": \"%s\"}" $VOL
