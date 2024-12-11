@@ -1,0 +1,13 @@
+#!/bin/sh
+
+case "${1}" in
+	up)
+	 mixer pcm.volume=+5% > /dev/null
+	;;
+	down)
+	 mixer pcm.volume=-5% > /dev/null
+	;;
+	*)
+	echo "secifiy up or down\n"
+	;;
+esac

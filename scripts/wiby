@@ -1,0 +1,4 @@
+#!/bin/sh
+# Search wiby.me from commandline
+set -x
+exec w3m https://wiby.me/?q="$*"

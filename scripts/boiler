@@ -1,0 +1,37 @@
+#!/bin/sh
+# Outputs boiler plate code. 
+
+usage() {
+    cat << EOF
+Usage:
+boiler [template]
+
+Current template options:
+    html
+EOF
+}
+
+html() {
+    cat << EOF
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    </body>
+</html>
+EOF
+}
+
+case "${1}" in
+    "html")
+        html
+        ;;
+    *)
+        usage
+        ;;
+esac
