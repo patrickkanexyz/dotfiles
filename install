@@ -10,6 +10,11 @@ for dir in sway w3m waybar; do
 	ln -s config/$dir "$HOME"/.config/$dir
 done
 
+if [ ! -e "$HOME/.local/bin/" ]; then
+	mkdir $HOME/.local
+	mkdir $HOME/.local/bin
+fi
+
 ln -s scripts "$HOME"/.local/bin/scripts
 
 for file in .bashrc .exrc .profile .tmux.conf; do
