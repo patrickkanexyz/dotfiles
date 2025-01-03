@@ -1,22 +1,25 @@
 #!/bin/sh
 
-set -xe
+set -x
 
 if [ ! -e "$HOME/.config" ]; then
 	mkdir "$HOME"/.config
 fi
 
-for dir in sway w3m waybar; do
+for dir in w3m; do
 	ln -s config/$dir "$HOME"/.config/$dir
 done
 
-if [ ! -e "$HOME/.local/bin/" ]; then
+if [ ! -e "$HOME/.local" ]; then
 	mkdir "$HOME"/.local
+fi
+
+if [ ! -e "$HOME/.local/bin/" ]; then
 	mkdir "$HOME"/.local/bin
 fi
 
-ln -s scripts "$HOME"/.local/bin/scripts
+ln -s $(pwd)/scripts "$HOME"/.local/bin/scripts
 
 for file in .bashrc .exrc .profile .tmux.conf; do
-	ln -s $file "$HOME"/$file
+	ln -s $(pwd)/$file "$HOME"/$file
 done
