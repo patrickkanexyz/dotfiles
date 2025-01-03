@@ -152,8 +152,8 @@ www() {
 # ----------------------------------------------------------------------------- 
 # dircolors
 
-#eval $(dircolors -b) # dircolors sets the LS_COLORS variable
-#alias ls='ls -h --color=auto'
+eval $(dircolors -b) # dircolors sets the LS_COLORS variable
+alias ls='ls -hF --color=auto'
 
 # ----------------------------------------------------------------------------- 
 # pager
