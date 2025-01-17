@@ -6,8 +6,8 @@ if [ ! -e "$HOME/.config" ]; then
 	mkdir "$HOME"/.config
 fi
 
-for dir in w3m; do
-	ln -s config/$dir "$HOME"/.config/$dir
+for dir in w3m newsboat; do
+	ln -s "$PWD"/config/$dir "$HOME"/.config/$dir
 done
 
 if [ ! -e "$HOME/.local" ]; then
