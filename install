@@ -18,8 +18,8 @@ if [ ! -e "$HOME/.local/bin/" ]; then
 	mkdir "$HOME"/.local/bin
 fi
 
-ln -s $(pwd)/scripts "$HOME"/.local/bin/scripts
+ln -s "$PWD"/scripts "$HOME"/.local/bin/scripts
 
 for file in .bashrc .exrc .profile .tmux.conf; do
-	ln -s $(pwd)/$file "$HOME"/$file
+	ln -s "$PWD"/$file "$HOME"/$file
 done
