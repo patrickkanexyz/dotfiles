@@ -27,6 +27,7 @@ export TERM=xterm-256color
 export VISUAL=vi
 export LYNX_CFG="$HOME/.config/lynx/lynx.cfg"
 export LYNX_LSS="$HOME/.config/lynx/lynx.lss"
+export WWW_HOME="https://patrickkanexyz.github.io"
 
 # ----------------------------------------------------------------------------- 
 # shell options
