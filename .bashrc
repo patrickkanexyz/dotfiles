@@ -87,7 +87,8 @@ pathappend \
 
 # TODO work on function/script to give a PWD display like:
 # ~/s/e/d/bin  aka first letter of each parent directory
-export PS1="\e[35m\u\e[32m@\e[36m\H\e[33m \W\e[0m$ "
+#export PS1="\e[35m\u\e[32m@\e[36m\H\e[33m \W\e[0m$ "
+export PS1="\$ "
 
 # ----------------------------------------------------------------------------- 
 # cdpath
