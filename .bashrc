@@ -28,6 +28,7 @@ export VISUAL=vi
 export LYNX_CFG="$HOME/.config/lynx/lynx.cfg"
 export LYNX_LSS="$HOME/.config/lynx/lynx.lss"
 export WWW_HOME="https://patrickkanexyz.github.io"
+export W3M_DIR="/home/pk/.config/w3m/"
 
 # ----------------------------------------------------------------------------- 
 # shell options
@@ -87,8 +88,8 @@ pathappend \
 
 # TODO work on function/script to give a PWD display like:
 # ~/s/e/d/bin  aka first letter of each parent directory
-#export PS1="\e[35m\u\e[32m@\e[36m\H\e[33m \W\e[0m$ "
-export PS1="\$ "
+export PS1="\e[35m\u\e[32m@\e[36m\H\e[33m \W\e[0m$ "
+#export PS1="\$ "
 
 # ----------------------------------------------------------------------------- 
 # cdpath
