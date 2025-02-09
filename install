@@ -2,24 +2,23 @@
 
 set -x
 
-if [ ! -e "$HOME/.config" ]; then
+if [ ! -d "$HOME"/.config ]; then
 	mkdir "$HOME"/.config
 fi
 
 for dir in w3m newsboat; do
-	ln -s "$PWD"/config/$dir "$HOME"/.config/$dir
+	ln -s "$PWD"/config/$dir "$HOME"/.config/$dir || echo "$dir directory exists"
 done
 
-if [ ! -e "$HOME/.local" ]; then
-	mkdir "$HOME"/.local
+if [ ! -d "$HOME/.local/bin/" ]; then
+	mkdir -p "$HOME"/.local/bin
 fi
 
-if [ ! -e "$HOME/.local/bin/" ]; then
-	mkdir "$HOME"/.local/bin
-fi
+ln -s "$PWD"/scripts "$HOME"/.local/bin/scripts || echo "Scripts directory already exists"
 
-ln -s "$PWD"/scripts "$HOME"/.local/bin/scripts
-
-for file in .bashrc .exrc .profile .tmux.conf; do
+for file in .bashrc .exrc .profile .tmux.conf .gitconfig; do
+	if [ -e "$HOME"/$file ]; then
+		mv "$HOME"/$file "$HOME"/$file.bak
+	fi
 	ln -s "$PWD"/$file "$HOME"/$file
 done
